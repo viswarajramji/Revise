@@ -1,0 +1,10 @@
+package Sorting;
+
+public class Application {
+	public static void main(String[] args) {
+		int arr[] = { 1, 2, 3, 4 };
+		for (int temp : arr) {
+			System.out.println(temp);
+		}
+	}
+}
