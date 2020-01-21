@@ -3,7 +3,7 @@ package Sorting;
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Student {
+class Student implements Comparable<Student> {
 	int id;
 	String name;
 	int age;
@@ -14,6 +14,21 @@ class Student {
 		this.age = age;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj != null && (obj instanceof Student)) {
+			Student s = (Student) obj;
+			if (s.id == this.id)
+				return true;
+		}
+		return false;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return this.id == o.id ? 1 : -1;
+	}
 }
 
 class SortById implements Comparator<Student> {
@@ -40,7 +55,7 @@ class ArraySort {
 		for (Student stu : str) {
 			System.out.println(stu.id + " " + stu.name + " " + stu.age);
 		}
-		
+
 		Arrays.sort(str, new SortByName());
 
 		for (Student stu : str) {
