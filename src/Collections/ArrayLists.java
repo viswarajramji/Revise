@@ -39,6 +39,23 @@ class Student {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj != null && obj instanceof Student) {
+			Student student = (Student) obj;
+			if (student.id == this.id) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return this.id;
+	}
 }
 
 public class ArrayLists {
